@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@import "@heroui/styles";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-kpa-50: #fff7ed;
+  --color-kpa-100: #ffedd5;
+  --color-kpa-200: #fed7aa;
+  --color-kpa-300: #fdba74;
+  --color-kpa-400: #fb923c;
+  --color-kpa-500: #f97316;
+  --color-kpa-600: #ea580c;
+  --color-kpa-700: #c2410c;
+  --color-kpa-800: #9a3412;
+  --color-kpa-900: #7c2d12;
+  --color-kpa-950: #431407;
+
+  --color-fresh-50: #f0fdf4;
+  --color-fresh-100: #dcfce7;
+  --color-fresh-200: #bbf7d0;
+  --color-fresh-300: #86efac;
+  --color-fresh-400: #4ade80;
+  --color-fresh-500: #22c55e;
+  --color-fresh-600: #16a34a;
+  --color-fresh-700: #15803d;
+  --color-fresh-800: #166534;
+  --color-fresh-900: #14532d;
+  --color-fresh-950: #052e16;
+
+  --shadow-card: 0 4px 24px -4px rgb(0 0 0 / 0.08);
+  --shadow-card-hover: 0 12px 40px -8px rgb(0 0 0 / 0.15);
+/* ---------from lavable app------------------------ */
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: 'Inter', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+@layer base {
+  /* body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } */
+   * { border-color: var(--color-border); }
+  html { font-family: var(--font-display); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+  }
+  .font-serif { font-family: var(--font-serif); }
+  .font-mono { font-family: var(--font-mono); }
+
+  #root {
+    min-height: 100vh;
+  }
+}

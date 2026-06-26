@@ -133,18 +133,7 @@ export default function AuthPage() {
                 {mode === "login" ? "Welcome back!" : "Create your account"}
               </h2>
             </div>
-            {/* 
-            ----- Admin login button hidden for normal users; visible only on login page
-             */}
-            {/* <Button
-              variant="ghost"
-              size="sm"
-              className="rounded-full border border-slate-200 px-3 py-2 text-slate-700 hover:bg-slate-100"
-              onPress={() => navigate('/admin/login')}
-              startContent={<AdminIcon />}
-            >
-              Admin
-            </Button>  */}
+           
           </div>
           <form className="space-y-5" onSubmit={handleSubmit} noValidate>
             {apiError && (
@@ -304,6 +293,22 @@ export default function AuthPage() {
               />
             </div>
           </div>
+           {/* 
+            ----- Admin login button hidden for normal users; visible only on login page
+             */}
+             {mode === "login" && (
+              <p className="text-center text-sm text-slate-200">connect with <a href="/admin/login">!admin</a></p>
+             )}
+            {/* <Button
+              variant="ghost"
+              size="sm"
+              className="rounded-full border border-slate-200 px-3 py-2 text-slate-700 hover:bg-slate-100"
+              onPress={() => navigate('/admin/login')}
+              startContent={<AdminIcon />}
+            >
+              Admin
+            </Button>  */}
+
         </section>
       </main>
       <SiteFooter />

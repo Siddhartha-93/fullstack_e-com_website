@@ -46,7 +46,7 @@ export default function SiteHeader() {
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-lg font-bold text-primary-foreground">
               <img src={fbLogo} alt="Fresh Bite Logo" />
             </span>
-            <span className="hidden text-xl font-bold tracking-tight text-foreground sm:inline">
+            <span className="text-xl font-bold tracking-tight text-foreground sm:inline">
               Fresh Bite
             </span>
           </RouterLink>

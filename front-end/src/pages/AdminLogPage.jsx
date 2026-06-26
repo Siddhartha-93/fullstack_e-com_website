@@ -84,6 +84,14 @@ export default function AdminLogPage() {
     event.preventDefault();
 
     const isMatch = form.password === form.confirmPassword;
+    if (mode === "signup") {
+      const userRole = await fetchUsers({ role: form.role});
+      // if (userRole?.data?.length > 1) {
+      //   setError("User already exists");
+      //   return;
+      // }
+      console.log(userRole?.data?.length, "userRole?.data?.length");
+    }
     if (mode === "signup" && !isMatch) {
       setError("Passwords do not match");
       return;
@@ -119,9 +127,9 @@ export default function AdminLogPage() {
     <div className="bg-default-50 flex min-h-screen items-center justify-center p-4">
       <div className="bg-content1 flex w-full max-w-sm flex-col gap-4 rounded-lg p-6 shadow-md">
         <div className="flex items-center  gap-2">
-           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-lg font-bold text-primary-foreground">
-              <img src={fbLogo} alt="Fresh Bite Logo" />
-            </span>
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-lg font-bold text-primary-foreground">
+            <img src={fbLogo} alt="Fresh Bite Logo" />
+          </span>
           <h2 className="text-xl font-medium">
             {mode === "login" ? "Admin login" : "Admin Sign up"}
           </h2>
@@ -142,6 +150,19 @@ export default function AdminLogPage() {
                 setForm({ ...form, name: event.target.value })
               }
               placeholder="Enter your full name"
+              variant="bordered"
+            />
+          )}
+          {mode === "signup" && (
+            <Input
+              isRequired
+              label="Email"
+              name="email"
+              value={form.email}
+              onChange={(event) =>
+                setForm({ ...form, email: event.target.value })
+              }
+              placeholder="Enter your Email"
               variant="bordered"
             />
           )}
@@ -171,6 +192,7 @@ export default function AdminLogPage() {
           />
           {mode === "signup" && (
             <Input
+              isRequired
               label="Confirm password"
               value={form.confirmPassword}
               onChange={(event) =>
